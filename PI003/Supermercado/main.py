@@ -12,8 +12,8 @@ def inserir_produto(produtos):
     produtos.append(produto)
     print("Produto cadastrado com sucesso!\n")
 
-    def excluir_produto(produtos):
-        codigo = input("Digite o código do produto a ser excluído: ")
+def excluir_produto(produtos):
+    codigo = input("Digite o código do produto a ser excluído: ")
 
     for produto in produtos:
         if produto['codigo'] == codigo:
@@ -22,3 +22,9 @@ def inserir_produto(produtos):
             return
 
     print("Produto não encontrado.\n")
+
+def listar_produtos(produtos):
+    for i, produto in enumerate(produtos, start=1):
+        print(f"{i}. Código: {produto['codigo']}, Nome: {produto['nome']}, Preço: R${produto['preco']:.2f}")
+
+    print("\n")
